@@ -1,0 +1,514 @@
+/* --- NORMALIZE ---*/
+:root {
+    /* Colors */
+    --primary: #184603;
+    --secondary: #FF5376;
+    --alternative: #f4f4ff;
+    --text-color: #2B2B2B;
+
+    /* ----------Spacings*/
+    /* mobile*/ 
+    --spacing-large: 4vw;
+    --spacing-medium: 2vw;
+    --spacing-small: 1vw;
+    --spacing-xsmall: 0.1vw;
+
+    /* tablet & desktop */
+    --spacing-xs:
+    --spacing-s:
+    --spacing-m: 
+    --spacing-l: 
+
+    /* Font-family */
+    --font-principal: 'Roboto Slab', serif;
+    --font-title: 'Lato', sans-serif;
+
+    /* ---------Font-Sizes */
+    /* mobile */
+    --text-large: 12vw;
+    --text-medium: 4vw;
+    --text-xmedium:8vw;
+    --text-base: 3.3vw;
+    --text-small: 3vw;
+
+    /* tablet & desktop */
+    --text-s: 1.3em;
+    --text-b: 1.5em;
+    --text-m: 1.7em;
+    --text-xm: 3.5em;
+    --text-l:  6em;
+}
+
+/*--- RESET ---*/
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*--- HTML,BODY Y NAV ---*/
+html {
+    font-size: 62.5%;
+} /* Achica las medidas y me permite que 1rem sea 10px*/
+body {
+    font-family: var(--font-principal);
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--font-title);
+    color: var(--primary);
+}
+
+img {
+    width: 90%;
+}
+
+ /* --- header --- */
+ 
+
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-around; /*sobre el eje horizontal*/
+    align-items: center; /* Sobre el eje vertical*/
+    padding: var(--text-small);
+    border-bottom: 2px solid var(--primary);
+    background-color: var(--primary);
+}
+.header__img{
+    max-width: 100vw;
+    border-radius: 50%;
+}
+.menu{ /* los UL*/
+    display: flex;
+    gap: var(--spacing-small)/*espacios entre items del menu*/
+}
+.menu__link{ /*Los enlaces A*/
+    font-size: var(--text-base);
+    padding: var(--spacing-xsmall) ;
+   /* border: 2px solid #fff;*/
+    transition: all 1s;
+    color: var(--alternative);
+}
+
+
+/*--FOOTER--*/
+footer{ 
+    grid-area: footer;   
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: space-around; /*sobre el eje horizontal*/
+    align-items: center; /* Sobre el eje vertical*/
+    padding: var(--text-small);
+    border-top: 2px solid var(--primary);
+    background-color: #184603;
+}
+.footer__menu{  
+    grid-column: 2;  
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: var(--spacing-xsmall)
+}
+
+.footer__menu__link{
+    font-size: var(--text-base);
+    padding: var(--spacing-xsmall) 1.2rem;
+}
+.footer__img{
+    grid-column: 3;
+    max-width: 80%;
+    border-radius: 50%;
+}
+.footer__info h3{
+    font-size:var(--text-base);
+    font-family: var(--font-title);
+    color: var(--alternative);
+    gap: var(--spacing-small);
+    margin-bottom: 5%;
+}
+.footer__info ul{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xsmall);
+    font-size: var(--text-base);   
+    gap: var(--spacing-small);
+    font-family: var(--font-title);
+    color: var(--alternative);
+}
+.footer__menu__link{
+    color: #f4f4ff;
+}
+
+/*---MAIN---*/
+.main__container{
+    grid-area: main;
+    margin: 0 auto;
+    margin-top: var(--spacing-small);
+}
+
+/*--- Seccion 1 ---*/
+.main__seccion1{
+    width: 100%;
+    height: 100%;
+    background-image: url("../MULTIMEDIA/alimentacion-saludable.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main__seccion1 h1 {
+    font-size: var(--text-large);
+    font-family: var(--font-title);
+    color: var(--alternative);  
+    text-shadow: black 0.1em 0.1em 0.2em; 
+    padding: var(--spacing-small);
+    text-align: center;   
+}
+/*---SECCION 2 ---*/
+.seccion2__h2{
+    font-size: var(--text-xmedium);
+    font-family: var(--font-title);
+    text-align: center;
+    color: var(--primary);
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.main__seccion2{
+    display: flex;
+    gap: var(--spacing-small);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 15vh;
+    margin-right: 15vh;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+    flex: 1 1 clamp(300px, 50%, 400px);
+    
+}
+.box__info{
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-small);
+}
+.box__info h3{
+    font-family: var(--font-title);
+    font-size: var(--text-medium);
+    color: var(--primary);
+}
+.box__info p{
+    margin-top: 1rem;
+    font-size: var(--text-base);
+    font-family: var(--font-principal);
+    margin-bottom: 5vh;
+}
+.box__img{
+    width: 30vw; 
+        
+}
+/* --- HOJA GALLERIA ---*/
+.gallery__info p{
+    margin-left: var(--spacing-large);
+    margin-right:  var(--spacing-large);
+    margin-bottom:  var(--spacing-large);
+    font-size: var(--text-base);
+}
+.gallery {
+    display: grid;
+    grid-template-areas: "foto1 foto2"
+    "foto3 foto4" "foto5 foto6";
+    margin-left: 4vw;
+    gap: var(--spacing-small);    
+}
+.gallery__img1{
+   grid-area: foto1; 
+}
+.gallery__img2{
+    grid-area: foto2;
+}
+.gallery__img3{
+    grid-area: foto3;
+}
+.gallery__img4{
+    grid-area: foto4;
+    
+}
+.gallery__img5{
+    grid-area: foto5;
+}
+.gallery__img6{
+    grid-area: foto6;
+}
+
+/* hoja tips*/
+.tips__info{
+    margin-left: var(--spacing-large);
+    margin-right:  var(--spacing-large);
+    margin-bottom:  var(--spacing-large);
+    font-size: var(--text-base);    
+}
+.video__h3{
+    font-family: var(--font-title);
+    font-size: var(--text-medium);
+    color: var(--primary);
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.video{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.video_frame{
+    width: 70vw;
+    height: 100vh;
+    align-self: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+.video{
+    text-align: center;
+}
+
+/*seccion info*/
+
+.info__container p{
+    margin-left: var(--spacing-large);
+    margin-right:  var(--spacing-large);
+    margin-bottom:  var(--spacing-large);
+    font-size: var(--text-small);
+}
+.info__container h3{
+    font-family: var(--font-title);
+    font-size: var(--text-medium);
+    color: var(--primary);
+}
+.info__container{
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-medium);
+    text-align: center;
+}
+.info__carne{
+    
+    display: flex;
+}
+.info__verdu{
+    
+    display: flex;
+}
+.info__frutas{
+    
+    display: flex;
+}
+.info__legumbres{
+   
+    display:flex
+}
+.info__pic{
+    width: 200%;
+    height: 200%;
+}
+.info__art{    
+    text-align: center;
+}
+.info__art p{
+    font-style: italic;
+}
+/* seccion formulario*/
+.form__container{    
+    width: 80vh;
+    height: 80vh;
+}
+form {    
+    width  : 70vw;
+    height : 80vh;
+    margin : 0 auto;
+    padding: var(--spacing-medium);
+    box-sizing: border-box;
+    background : #FFF;   
+  }
+#nombre{
+    width: 30vw;
+}
+#email{
+    width: 45vw;
+}
+.form__otro{
+    width: 45vw;
+}
+textarea{
+    width: 70vw;
+    height: 30vh;
+}
+#enviar{
+width: 25vw;
+}
+
+
+/* media query 480px min a 768 max */
+@media screen and (min-width: 480px){
+    .header__img{
+        max-width: 150px;
+    }
+    .menu__link{ 
+       font-size: var(--text-b);
+       padding: var(--spacing-small) ;
+    }
+    .footer__menu{ 
+    gap: var(--spacing-medium)
+    }
+    .footer__menu__link{
+        font-size: var(--text-b);
+        padding: var(--spacing-medium) 1.2rem;
+    }
+    .footer__info h3{
+        font-size:var(--text-m);                
+        gap: var(--spacing-medium);        
+    }
+    .footer__info ul{       
+        gap: var(--spacing-small);
+        font-size: var(--text-b);   
+    }
+    .main__seccion1 h1 {
+        font-size: var(--text-l);        
+        padding: var(--spacing-medium);
+          
+    }
+    .seccion2__h2{
+        font-size: var(--text-xm); 
+        margin-left: 15%;
+        margin-right: 15%;     
+    }
+    .main__seccion2{       
+        gap: var(--spacing-medium);       
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-medium);
+             
+    }
+    .box__info{
+        
+        padding: var(--spacing-medium);
+    }
+    .box__info h3{        
+        font-size: var(--text-m);
+        color: var(--primary);
+    }
+    .box__info p{        
+        font-size: var(--text-b);
+        text-align: justify;
+    }
+    .box__img{
+        width: 100px; 
+        margin-left: 2rem;                 
+    }
+    .gallery__info p{       
+        font-size: var(--text-b);
+    }
+    .tips__info{
+        font-size: var(--text-b);
+    }
+    .video__h3{
+        font-size: var(--text-m);
+    }
+    .info__container p{        
+        font-size: var(--text-s);
+        text-align: center;
+    }
+    .info__container h3{
+       
+        font-size: var(--text-m);
+    }
+    .info__pic{
+        width: 100rem;
+        
+    }
+        
+}
+
+/* media query 768px min a 1023 max */
+@media screen and (min-width: 768px){
+    .main__seccion2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .footer__info ul{       
+        gap: var(--spacing-medium);
+        font-size: var(--text-b); 
+    }
+    .menu__link{ 
+        font-size: var(--text-m); 
+        border: 2px solid var(--primary);       
+     }
+     .menu__link:hover{
+        border-color: var(--alternative);
+    }
+    .info__carne{
+    
+        display: flex;
+        flex-direction: column;
+    }
+    .info__verdu{
+        
+        display: flex;
+        flex-direction: column;
+    }
+    .info__frutas{
+        
+        display: flex;
+        flex-direction: column;
+    }
+    .info__legumbres{
+       
+        display:flex;
+        flex-direction: column;
+    }
+    .info__pic{
+        width: 70%;
+        margin-left: 15%;
+        margin-bottom: 5%;
+    }
+    .info__container p{        
+        font-size: var(--text-s);
+        margin-left: 15%;
+        margin-right: 15%;
+        text-align: center;
+    }
+    
+}
+
+/* media query 1024px en adelante*/
+@media screen and (min-width: 1024px){
+    .main__seccion1{
+        width: 100%;
+        height: 80vh;
+    }   
+    .box__info h3{        
+        font-size: var(--text-m);
+        color: var(--primary);
+    }
+    .info__pic{
+        width: 50%;
+        margin-left: 27%;
+        
+    }
+}
+          
